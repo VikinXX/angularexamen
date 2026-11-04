@@ -1,0 +1,18 @@
+<section class="mx-auto max-w-5xl px-4 py-8 sm:px-6">
+  <div class="mb-8 flex flex-wrap items-center justify-between gap-4">
+    <h1 class="text-3xl font-bold text-slate-900">Cesta del usuario</h1>
+    <button (click)="descargarPdf()" class="rounded-lg bg-slate-900 px-4 py-2.5 font-semibold text-white transition hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-400">Descargar PDF</button>
+  </div>
+  <div class="space-y-4">
+    @for(pedido of pedidos; track pedido) {
+      <article class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+        <h2 class="text-lg font-bold text-slate-900">Cubo: {{pedido.idCubo}}</h2>
+        <div class="mt-2 grid gap-1 text-sm text-slate-600 sm:grid-cols-3">
+          <p>Pedido: {{pedido.idPedido}}</p>
+          <p>Usuario: {{pedido.idUsuario}}</p>
+          <p>Fecha: {{pedido.fechaPedido}}</p>
+        </div>
+      </article>
+    }
+  </div>
+</section>
